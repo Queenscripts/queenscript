@@ -493,6 +493,7 @@ section > p {
 /* project section */
 .projects{
 	padding: 10px;
+	margin: 30% 0;
 }
 .project-image{
 	max-width: 100%;
