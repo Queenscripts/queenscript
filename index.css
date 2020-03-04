@@ -599,7 +599,6 @@ h2 {
 h4 {
 	border-right: 10px solid rgba(189, 178, 60, .2);
 	text-transform: uppercase;
-	height: 20px;
 	background-position: center;
 	font-size: 2.5em;
 	line-height: 1;
@@ -609,7 +608,6 @@ h4 {
 	letter-spacing: 6px;
 	text-align: left;
 	padding: 30px;
-	margin: 0 0 120px;
 }
 
 footer {
