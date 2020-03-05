@@ -382,11 +382,12 @@ img.about-me {
 }
 .section:hover .intro-text{
 	visibility: visible;
-	background-color: rgba(255, 255, 255, .88);
 	opacity: 1;
 	margin: 0;
 	padding: 60px;
 	height: 400px;
+	display: flex;
+	align-items: center;
 }
 
 
@@ -410,8 +411,8 @@ a {
 	display: inline-block;
 	margin: 1.2% 4%;
 	text-decoration: none;
-	color: white ;
-	font-weight: 500;
+	color: #7d6800 ;
+	font-weight: 900;
 }
 
 #main-nav> a::after {
@@ -532,7 +533,7 @@ header {
 /* header image styling */
 header::after{
 	content:'';
-	background-image:radial-gradient(rgba(189, 178, 60, .9),rgba(255, 255, 255, .88)), url("https://images.unsplash.com/photo-1498612753354-772a30629934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
+	background-image:linear-gradient(rgba(255, 255, 255, .88), rgba(189, 178, 60, .9)), url("https://images.unsplash.com/photo-1498612753354-772a30629934?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
 	opacity: .8;
 	top: 0;
 	left: 0;
