@@ -518,7 +518,7 @@ header {
 	position: -webkit-sticky;
 	top: 0;
 	overflow: hidden;
-	min-width: 100vw;
+	width: 100%;
 	height: auto;
 	font-size: 16px;
 	text-transform: uppercase;
@@ -613,7 +613,7 @@ h4 {
 footer {
 	margin: 0;
 	padding: 20px;
-	background: #423f2d;
+	background: #423f2da8;
 	height: auto;
 	width: 100vw;
 	color: white;
