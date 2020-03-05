@@ -470,6 +470,7 @@ section > p {
 	font-size: 16px;
 	padding-left: 30px;
 	text-align: left;
+	display: flex;
 }
 
 
@@ -493,7 +494,6 @@ section > p {
 /* project section */
 .projects{
 	padding: 10px;
-	margin: 30% 0;
 }
 .project-image{
 	max-width: 100%;
@@ -600,7 +600,7 @@ h4 {
 	border-right: 10px solid rgba(189, 178, 60, .2);
 	text-transform: uppercase;
 	background-position: center;
-	font-size: 2.5em;
+	font-size: 1em;
 	line-height: 1;
 	display: flex;
 	justify-content: center;

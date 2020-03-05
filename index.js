@@ -1,6 +1,4 @@
 //function for header blog post page 
-
-
 //function for mobile togile hamburger menu
 function myFunction(x) {
   x.classList.toggle("change");
