@@ -1,1 +1,0 @@
-module.exports = require("/Users/queensform/Desktop/2020/Queenscript/queenscript/blog/src/utils/typography")

@@ -556,6 +556,7 @@ header {
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
+	padding: 10px;
 }
 /* header image styling */
 header::after{
