@@ -13,7 +13,7 @@ const BlogIndex = ({ data, location }) => {
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Nav />
-      <h1  style={{textAlign: "center"}}> <img src={logo} style={{maxWidth: "30%"}}/> Blog</h1>
+      <h1  style={{textAlign: "center"}}> <img alt="blog logo" src={logo} style={{maxWidth: "30%"}}/> Blog</h1>
       {posts.map(({ node }) => {
         const title = node.frontmatter.title || node.fields.slug
         return (
@@ -26,7 +26,7 @@ const BlogIndex = ({ data, location }) => {
               <small>{node.frontmatter.date}</small>
            
             <section>
-              <p
+              <p style={{padding: "30px 0"}}
                 dangerouslySetInnerHTML={{
                   __html: node.frontmatter.description || node.excerpt,
                 }}

@@ -1,17 +1,15 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 import Nav from "../components/nav"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm } from "../utils/typography"
 import gumbo from "../../content/projects/gumbo.png"
 import quizapp from "../../content/projects/quizapp.png"
 import seosift from "../../content/projects/seosift.png"
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const posts = data.allMarkdownRemark.edges
+//   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -20,7 +18,7 @@ const BlogIndex = ({ data, location }) => {
       <body>
    <section class="section">
       <h1 style={{margin:"10px 0"}}>Call Me Queen</h1>
-      <img alt="Queenscript image icon" class="about-me" src="https://lh3.googleusercontent.com/GWqgaByVST3Sg3gNYvdtX7LklKFV6TwFnKO1po1RekiD6NlKjnDaDEdccNgChKemUo19syrxp4DZCUBx2Nyg3V__9LFkTwbBZcEk9kIPpQc_5fPWG3pE1hYPWdCdzeE3TTM8cNnaqco=s756-no"/>
+      <img alt="Queenscript icon" class="about-me" src="https://lh3.googleusercontent.com/GWqgaByVST3Sg3gNYvdtX7LklKFV6TwFnKO1po1RekiD6NlKjnDaDEdccNgChKemUo19syrxp4DZCUBx2Nyg3V__9LFkTwbBZcEk9kIPpQc_5fPWG3pE1hYPWdCdzeE3TTM8cNnaqco=s756-no"/>
       <h4 class="intro-text">Problem Solver. Developer. Designer. Poet.</h4>
    </section>
    <section id="intro" class="section">
@@ -33,7 +31,7 @@ const BlogIndex = ({ data, location }) => {
    <section class="projects" id="seo">
       <h2>SEOsift</h2>
       <p class="description">SEOsift scrapes the source code of websites for information on its web build, or content management systems, CMS. SEOsift additionally looks for SEO ranking scores. You can test your web builder knowledge in the CMS Quiz App below!</p>
-      <a target="_blank" href="http://seosift.com/"><img alt="project image of SEOsift.com" class="project-image" src={seosift}/></a>
+      <a  rel="noopener noreferrer" target="_blank" href="http://seosift.com/"><img alt="project of SEOsift.com" class="project-image" src={seosift}/></a>
       <p class="stack">
          Technologies used in this project include:
          <span class="techcons">

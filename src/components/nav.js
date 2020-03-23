@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { useStaticQuery, graphql, Link } from "gatsby"
+import {  Link } from "gatsby"
 import "./nav.css"
 import logo from "../../content/assets/profile-pic.jpg"
 

@@ -27,13 +27,7 @@ const BlogPostTemplate = ({ data, pageContext, location }) => {
           >
             {post.frontmatter.title}
           </h1>
-          <p
-            style={{
-              ...scale(-1 / 5),
-              display: `block`,
-              marginBottom: rhythm(1),
-            }}
-          >
+          <p> 
             {post.frontmatter.date}
           </p>
         <section dangerouslySetInnerHTML={{ __html: post.html }} />
