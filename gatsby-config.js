@@ -1,83 +1,58 @@
+/**
+ * Configure your Gatsby site with this file.
+ *
+ * See: https://www.gatsbyjs.org/docs/gatsby-config/
+ */
+
 module.exports = {
+  /* Your site config here */
   siteMetadata: {
-    title: `Queenscript Blog`,
-    author: {
-      name: `Queen Shabazz`,
-      summary: `who lives and works in Oakland, building purpose-driven digital products.`,
+    title: `Queenscript`,
+    description: `A blog of musings on javascript and beyond.`,
+    siteUrl: `https://queenscript.com/`,
+    home: {
+      title: `Queenscript`,
+      description: `I have been specifically designed to become a digital home for designers and developers, help them build amazing professional looking websites with ease.`,
     },
-    description: `Musings on technology, development, javascript, and all in between`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
-    social: {
-      twitter: `_queenscript`,
-    },
+    /* W3Layouts domain verification key for contact forms https://my.w3layouts.com/Forms/ */
+    w3l_dom_key: `5e609f7a2d23fCF_Domain_verify` 
   },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
-        name: `blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/content/assets`,
-        name: `assets`,
+        name: `markdown-pages`,
+        path: `${__dirname}/_data`,
       },
     },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            // options: {
-            //   maxWidth: 590,
-            // },
+        plugins: [{
+          resolve: `gatsby-remark-prismjs`,
+          options: {
+            classPrefix: "language-",
+            inlineCodeMarker: null,
+            aliases: {},
+            showLineNumbers: false,
+            noInlineHighlight: false,
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 0`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
+        },
+        {
+          resolve: 'gatsby-remark-emojis',
+        }],
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
+        // The property ID; the tracking code won't be generated without it
+        // trackingId: ,
+        head: true,
+      }
     },
-    `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
-      },
-    },
+    `gatsby-plugin-sass`, 
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-typography`,
-      options: {
-        pathToConfigModule: `src/utils/typography`,
-      },
-    },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify-cms`,
   ],
 }

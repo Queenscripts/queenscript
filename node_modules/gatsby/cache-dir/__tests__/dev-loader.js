@@ -12,21 +12,9 @@ jest.mock(`../socketIo`, () => {
 })
 
 describe(`Dev loader`, () => {
-  let originalBasePath
-  let originalPathPrefix
-  beforeEach(() => {
-    originalBasePath = global.__BASE_PATH__
-    originalPathPrefix = global.__PATH_PREFIX__
-    global.__BASE_PATH__ = ``
-    global.__PATH_PREFIX__ = ``
-  })
-
-  afterEach(() => {
-    global.__BASE_PATH__ = originalBasePath
-    global.__PATH_PREFIX__ = originalPathPrefix
-  })
-
   describe(`loadPageDataJson`, () => {
+    let originalBasePath
+    let originalPathPrefix
     let xhrCount
 
     /**
@@ -58,12 +46,18 @@ describe(`Dev loader`, () => {
 
     // replace the real XHR object with the mock XHR object before each test
     beforeEach(() => {
+      originalBasePath = global.__BASE_PATH__
+      originalPathPrefix = global.__PATH_PREFIX__
+      global.__BASE_PATH__ = ``
+      global.__PATH_PREFIX__ = ``
       xhrCount = 0
       mock.setup()
     })
 
     // put the real XHR object back and clear the mocks after each test
     afterEach(() => {
+      global.__BASE_PATH__ = originalBasePath
+      global.__PATH_PREFIX__ = originalPathPrefix
       mock.teardown()
     })
 
@@ -194,7 +188,7 @@ describe(`Dev loader`, () => {
       expect(devLoader.pageDataDb.get(`/unknown-page`)).toEqual({
         notFound: true,
         pagePath: `/404.html`,
-        status: `error`,
+        status: `failure`,
       })
       expect(xhrCount).toBe(3)
     })
@@ -208,11 +202,9 @@ describe(`Dev loader`, () => {
         status: `error`,
         pagePath: `/error-page`,
       }
-      expect(await devLoader.loadPageDataJson(`/error-page/`)).toEqual({
-        status: `error`,
-        pagePath: `/dev-404-page`,
-        retries: 3,
-      })
+      expect(await devLoader.loadPageDataJson(`/error-page/`)).toEqual(
+        expectation
+      )
       expect(devLoader.pageDataDb.get(`/error-page`)).toEqual(expectation)
       expect(xhrCount).toBe(1)
     })
@@ -227,11 +219,9 @@ describe(`Dev loader`, () => {
         retries: 3,
         pagePath: `/blocked-page`,
       }
-      expect(await devLoader.loadPageDataJson(`/blocked-page/`)).toEqual({
-        status: `error`,
-        retries: 3,
-        pagePath: `/dev-404-page`,
-      })
+      expect(await devLoader.loadPageDataJson(`/blocked-page/`)).toEqual(
+        expectation
+      )
       expect(devLoader.pageDataDb.get(`/blocked-page`)).toEqual(expectation)
       expect(xhrCount).toBe(4)
     })
@@ -412,22 +402,22 @@ describe(`Dev loader`, () => {
       expect(emitter.emit).toHaveBeenCalledTimes(0)
     })
 
-    it(`should log an error when 404 cannot be fetched`, async () => {
+    it(`should throw an error when 404 cannot be fetched`, async () => {
       const devLoader = new DevLoader(null, [])
-      const consoleErrorSpy = jest.spyOn(console, `error`)
-      const defaultXHRMockErrorHandler = XMLHttpRequest.errorCallback
-      mock.error(() => {})
 
-      await devLoader.loadPage(`/404.html/`)
-
-      expect(consoleErrorSpy).toHaveBeenCalledTimes(1)
-      expect(consoleErrorSpy).toHaveBeenCalledWith(
-        `404 page could not be found. Checkout https://www.gatsbyjs.org/docs/add-404-page/`
+      devLoader.loadPageDataJson = jest.fn(() =>
+        Promise.resolve({
+          status: `failure`,
+        })
       )
 
-      mock.error(defaultXHRMockErrorHandler)
-      consoleErrorSpy.mockRestore()
-
+      try {
+        await devLoader.loadPage(`/404.html/`)
+      } catch (err) {
+        expect(err.message).toEqual(
+          expect.stringContaining(`404 page could not be found`)
+        )
+      }
       expect(devLoader.pageDb.size).toBe(0)
       expect(emitter.emit).toHaveBeenCalledTimes(0)
     })
