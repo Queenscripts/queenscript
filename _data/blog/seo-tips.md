@@ -3,7 +3,7 @@ template: BlogPost
 path: /seo-tips
 date: 2019-12-28T22:40:32.169Z
 title: Top 3 SEO Tips
-thumbnail: /assets/seo.jpeg
+thumbnail: /assets/seo2.jpeg
 metaDescription:  Website traffic deals with how often, how frequent, and how long users are visiting. Such digital traffic is an indicator to how well your business is doing on the web. It is also a good measure for your marketing efforts, and ultimately supports lead generation.
 ---
 

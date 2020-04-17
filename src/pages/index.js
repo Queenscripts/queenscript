@@ -12,6 +12,7 @@ const BlogIndex = () => {
    
       <Layout> 
       <body>
+<script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
    <section className="section">
       <h1 style={{margin:"10px 0"}}>Call Me Queen</h1>
       <img alt="Queenscript icon" className="about-me" src="https://lh3.googleusercontent.com/GWqgaByVST3Sg3gNYvdtX7LklKFV6TwFnKO1po1RekiD6NlKjnDaDEdccNgChKemUo19syrxp4DZCUBx2Nyg3V__9LFkTwbBZcEk9kIPpQc_5fPWG3pE1hYPWdCdzeE3TTM8cNnaqco=s756-no"/>

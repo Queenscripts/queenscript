@@ -2,7 +2,6 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from "../components/layout"
 import PostLink from "../components/post-link"
-// import HeroHeader from "../components/heroHeader"
 
 const IndexPage = ({
   data: {
@@ -17,14 +16,10 @@ const IndexPage = ({
 
   return (
     <Layout>
-      {/* <Helmet> */}
         <title>{site.siteMetadata.title}</title>
         <meta name="description" content={site.siteMetadata.description} />
         {!site.siteMetadata.w3l_dom_key ? null : <meta name="w3l-domain-verification" content={site.siteMetadata.w3l_dom_key} />}
-      {/* </Helmet> */}
-      {/* <HeroHeader/> */}
-      {/* <h2>Blog Posts &darr;</h2> */}
-      <div className="grids">
+      <div>
         {Posts}
       </div>
     </Layout>
@@ -46,12 +41,14 @@ export const pageQuery = graphql`
         node {
           id
           excerpt(pruneLength: 250)
+          timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             path
             title
             thumbnail
           }
+          
         }
       }
     }

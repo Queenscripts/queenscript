@@ -1,25 +1,65 @@
 article{
 	display: flex;
     flex-direction: row;
-    padding: 50px;
+    padding: 10px;
     box-shadow: 1px 11px 20px 0px #4233008a;
     margin: 4%;
     align-items: center;
     align-content: initial;
 }
 
+.gatsby-highlight {
+	background-color: #fdf6e3;
+	border-radius: 0.3em;
+	margin: 0.5em 0;
+	padding: 1em;
+	overflow: auto;
+  }
+  
+  .gatsby-highlight pre[class*="language-"].line-numbers {
+	padding: 0;
+	padding-left: 2.8em;
+	overflow: initial;
+  }
+
+.post-thumbnail{
+	height: 13em;
+    width: 70vw;
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+
 article.post{
 	display: flex;
 	flex-direction: column;
+	padding: 50px;
 }
 
 header>a{
     text-decoration: none;
-	padding: 10px;
-	font-size: 3vw;
+	padding: 5px;
+	font-size: 2.5vw;
 
 }
 
+.socialIcons .socialIcon {
+    height: 1em;
+    color: #423300;
+}
+
+.socialIcons .socialIcon:hover {
+    height: 1em;
+    color: #423300c7;
+}
+.socialIcons{
+	list-style-type: none;
+    font-size: 1.75em;
+    display: flex;
+}
+
+.socialIcons>li{
+	padding: 7px;
+}
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 
@@ -383,7 +423,6 @@ header>a{
 
 li *:last-child {
     margin-bottom: 0;
-    padding: 40px;
     font-weight: 700;
 }
 
@@ -433,7 +472,8 @@ div{
 	line-height: 2;
 }
 header > a {
-	padding: 20px;
+	padding: 10px;
+	margin: 0 4px;
 	display: flex;
     justify-items: space-evenly;
     text-decoration: none;
@@ -533,12 +573,11 @@ section > p {
 }
 /* project section */
 .projects{
-	padding: 6vh;
+	padding: 10vh;
 }
 .project-image{
 	display: block;
-	width: 90vw;
-	border: 2px solid #CF532C;
+	height: 40vw;
 }
 /*all things navigation*/
 article> a> img{
@@ -565,17 +604,16 @@ header {
 	position: sticky;
 	position: -webkit-sticky;
 	top: 0;
-	overflow: hidden;
 	width: 100%;
 	height: auto;
-	font-size: 16px;
+	font-size: 2vw;
 	text-transform: uppercase;
 	z-index: 1;
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
 	align-items: center;
-	padding: 10px;
+	padding: 0;
 }
 
 #buffer-extension-hover-button{
@@ -800,16 +838,6 @@ footer> ul{
     	overflow-x: scroll;
 		width: 500px;
 	}
-	.logo.top{
-		display: none;
-	}
-	/* .project-image{
-		display: block;
-		width: auto;
-		height: 40vh;
-		border: 2px solid #CF532C;
-	} */
-
 }
 
 .logo{
