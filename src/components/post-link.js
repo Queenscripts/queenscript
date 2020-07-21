@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 const PostLink = ({ post }) =>   (
   <article>
     <>
+    {console.log(post)}
     <span style={{display: "flex", flexDirection: "row"}}>
         <Link to={post.frontmatter.path}>
         {!!post.frontmatter.thumbnail && (
@@ -17,7 +18,7 @@ const PostLink = ({ post }) =>   (
           </Link>
           </h2>
           <div className="post-meta" style={{fontSize: "1.5vw", textTransform: "capitalize"}}>{post.frontmatter.date} • <span style={{fontWeight: 700}}>{post.timeToRead} min read</span> </div>
-          <p style={{lineHeight: "1.2", fontSize: "2.5vw", fontWeight: 100}}>{post.excerpt}</p>
+          <p style={{lineHeight: "1.2", fontSize: "2.5vw", fontWeight: 100}}>{post.frontmatter.metaDescription}</p>
         </div>
     </span>
     </>

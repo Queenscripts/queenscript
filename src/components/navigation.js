@@ -14,7 +14,7 @@ export default (props) => (
      <Link to="/#about"> About</Link>
      <Link to="/#portfolio"> Portfolio</Link>
      <Link to="/blog"> Blog</Link>
-     <Search collapse indices={searchIndices} />
+     <Search style={{margin: "0 9px"}} collapse indices={searchIndices} />
   </header>
   
 )
