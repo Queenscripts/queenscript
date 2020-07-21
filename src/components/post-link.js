@@ -2,27 +2,25 @@ import React from "react"
 import { Link } from "gatsby"
 
 const PostLink = ({ post }) =>   (
-  <article class="card ">
-      {console.log(post, "HELLO")}
-
-   
+  <article>
     <>
-    <span style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-        <h2 className="post-title">
-        <Link to={post.frontmatter.path} className="post-link">
-          {post.frontmatter.title}
-        </Link>
-        </h2>
+    {console.log(post)}
+    <span style={{display: "flex", flexDirection: "row"}}>
         <Link to={post.frontmatter.path}>
-      {console.log(post.frontmatter)}
-      {!!post.frontmatter.thumbnail && (
-        <img style={{width: "60vw", padding: 10}} src={post.frontmatter.thumbnail} alt={post.frontmatter.title + "- Featured Shot"} />
+        {!!post.frontmatter.thumbnail && (
+        <img style={{width: "42vw", padding: 5, margin: "10px 2px"}} src={post.frontmatter.thumbnail} alt={post.frontmatter.title + "- Featured Shot"} />
       )}
-    </Link>
-        <p style={{lineHeight: "1"}}>{post.excerpt}</p>
-        <div class="post-meta" style={{fontSize: 12, textTransform: "lowercase"}}>{post.frontmatter.date}</div>
+        </Link>
+        <div style={{padding: 0}}>
+          <h2 className="post-title" style={{fontSize: "3vw"}}>          
+          <Link to={post.frontmatter.path} className="post-link">
+            {post.frontmatter.title}
+          </Link>
+          </h2>
+          <div className="post-meta" style={{fontSize: "1.5vw", textTransform: "capitalize"}}>{post.frontmatter.date} • <span style={{fontWeight: 700}}>{post.timeToRead} min read</span> </div>
+          <p style={{lineHeight: "1.2", fontSize: "2.5vw", fontWeight: 100}}>{post.frontmatter.metaDescription}</p>
+        </div>
     </span>
-     
     </>
   </article>
 )

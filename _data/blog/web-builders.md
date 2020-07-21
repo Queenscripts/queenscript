@@ -1,16 +1,17 @@
 ---
 template: BlogPost
-path: /hello-world
+path: /web-builders-101
 date: 2020-02-06T23:46:37.121Z
 title: Web Builders 101 | Intro
 thumbnail: /assets/web.jpeg
-metaDescription: Meta description for Hello World
+metaDescription: I have compared some of the top three popular CMS’s on the net- Wordpress, Squarespace and Wix, and have made my own audit of why each come with their own share of pros and cons, that make it worthwhile from a personal, business, and client-facing perspective. 
 
 ---
 
-Developers engineered the CMS interfaces to be easily usable by any user, most likely with the standards outlined by Usability.gov.  As a web designer, it is important to have a high-level understanding of how some of the most popular content management system works, and why some might be more important than others according to users’ particular needs. 
-As a web designer for a SAAS startup company, I am often working with multiple content management systems, and analyzing their importances. 
-Outlined below, I have compare some of the top three popular CMS’s on the net- Wordpress, Squarespace and Wix, and have made my own audit of why each come with their own share of pros and cons, that make it worthwhile from a personal, business, and client-facing perspective. The goal is to choose the best platform for our work, as well as the work for our clients. 
+Developers engineered the interfaces of content management systems to be easily usable by any user, most likely with the standards outlined by [Usability.gov](http://www.usability.gov).  As a web designer, it is important to have a high-level understanding of how some of the most popular content management system works, and why some might be more important than others according to users’ particular needs. 
+
+As a former web designer for a SAAS startup company, I  often work with multiple content management systems, and analyzing their importances. 
+Outlined below, I have compared some of the top three popular CMS’s on the net- Wordpress, Squarespace and Wix, and have made my own audit of why each come with their own share of pros and cons, that make it worthwhile from a personal, business, and client-facing perspective. The goal is to choose the best platform for our work, as well as the work for our clients. 
 
 ####  WIX
 

@@ -3,6 +3,10 @@
  *
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
+require("dotenv").config()
+
+const queries = require("./src/utils/algolia")
+
 
 module.exports = {
   /* Your site config here */
@@ -19,6 +23,17 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, 
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `markdown-pages`,
@@ -28,13 +43,31 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [{
+       numberLines: true,
+        plugins: [
+          {
+            resolve: `gatsby-remark-embed-snippet`,
+            options: {
+              directory: `${__dirname}/content/snippets/`,
+            },
+          },
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow"
+            }
+          },
+          `gatsby-remark-reading-time`,
+
+          {
           resolve: `gatsby-remark-prismjs`,
           options: {
             classPrefix: "language-",
+            aliases: {},
             inlineCodeMarker: null,
             aliases: {},
-            showLineNumbers: false,
+            showLineNumbers: true,
             noInlineHighlight: false,
           },
         },

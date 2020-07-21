@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/queensform/Desktop/2020/Queenscript/queenscript/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
       plugin: require('/Users/queensform/Desktop/2020/Queenscript/queenscript/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[],"head":true},
     },{
