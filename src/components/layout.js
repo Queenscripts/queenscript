@@ -19,7 +19,7 @@ export default ({ children }) => {
     `
   )
   return (
-    <>
+    <div>
       <Navigation />
       {children}
       <footer>
@@ -42,6 +42,6 @@ export default ({ children }) => {
            <br></br><br></br><br></br>
          <small>  ©  Queen Shabazz  {new Date().getFullYear()}</small>
      </footer>
-    </>
+    </div>
   )
 }

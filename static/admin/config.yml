@@ -1,7 +1,11 @@
 backend:
   name: github
+<<<<<<< HEAD
   repo: QueenShabazz/queenscript
   branch: master
+=======
+  repo: W3Layouts/gatsby-starter-delog
+>>>>>>> parent of 5556f910b... reconfig
 media_folder: static/assets
 public_folder: /assets
 collections:

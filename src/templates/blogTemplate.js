@@ -15,7 +15,7 @@ export default function Template({
        <SEO
           title={frontmatter.title}
           description={frontmatter.metaDescription}
-          metaImage={frontmatter.thumbnail}
+          image={frontmatter.thumbnail}
         />
       <Helmet>
         <title>{frontmatter.title}</title>

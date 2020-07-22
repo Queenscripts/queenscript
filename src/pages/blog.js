@@ -44,7 +44,6 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            metaDescription
             path
             title
             thumbnail

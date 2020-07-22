@@ -1,1 +1,5 @@
+<<<<<<< HEAD:iteration1/page-data/dev-404-page/page-data.json
 {"componentChunkName":"component---cache-dev-404-page-js","path":"/dev-404-page/","result":{"data":{"allSitePage":{"nodes":[{"id":"SitePage /web-builders-101","path":"/web-builders-101"},{"id":"SitePage /seo-101","path":"/seo-101"},{"id":"SitePage /seo-tips","path":"/seo-tips"},{"id":"SitePage /blog/","path":"/blog/"},{"id":"SitePage /contact/","path":"/contact/"},{"id":"SitePage /","path":"/"},{"id":"SitePage /html-101","path":"/html-101"}]}},"pageContext":{}}}
+=======
+{"componentChunkName":"component---cache-dev-404-page-js","path":"/dev-404-page/","result":{"data":{"allSitePage":{"nodes":[{"id":"SitePage /html-101","path":"/html-101"},{"id":"SitePage /web-builders-101","path":"/web-builders-101"},{"id":"SitePage /seo-101","path":"/seo-101"},{"id":"SitePage /seo-tips","path":"/seo-tips"},{"id":"SitePage /blog/","path":"/blog/"},{"id":"SitePage /contact/","path":"/contact/"},{"id":"SitePage /","path":"/"}]}},"pageContext":{}}}
+>>>>>>> parent of 5556f910b... reconfig:public/page-data/dev-404-page/page-data.json
